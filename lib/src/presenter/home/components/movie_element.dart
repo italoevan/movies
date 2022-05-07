@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:movies/src/core/consts/endpoints/app_endpoints.dart';
 
-import '../../../infra/models/generic_movie_model.dart';
+import '../../../domain/entities/movie.dart';
 
 class MovieElement extends StatelessWidget {
-  final GenericMovieModel model;
+  final MovieEntity model;
 
   const MovieElement({
     Key? key,

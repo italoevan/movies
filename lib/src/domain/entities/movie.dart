@@ -1,7 +1,7 @@
-class NowPlayingMovie {
+class MovieEntity {
   final String image;
   final int id;
-  NowPlayingMovie(
+  MovieEntity(
     this.image,
     this.id,
   );

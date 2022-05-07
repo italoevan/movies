@@ -1,11 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:movies/src/infra/models/generic_movie_model.dart';
+import 'package:movies/src/domain/entities/movie.dart';
 import 'package:movies/src/presenter/home/components/movie_element.dart';
 
 class MoviesCarousel extends StatelessWidget {
   final int itemCount;
-  final List<GenericMovieModel> movies;
+  final List<MovieEntity> movies;
 
   const MoviesCarousel({
     Key? key,

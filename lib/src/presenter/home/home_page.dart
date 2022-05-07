@@ -38,14 +38,15 @@ class _HomePageState extends State<HomePage> {
         ? const CircularProgressIndicator()
         : Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [_buildNowPlayingTitle(), _buildCarousel()],
+            children: [_buildTitle("Playing Now"), _buildCarousel()],
           ));
   }
 
-  Widget _buildNowPlayingTitle() {
-    return const Text(
-      "Playing Now",
+  Widget _buildTitle(String title) {
+    return Text(
+      title,
       textAlign: TextAlign.start,
+      style: const TextStyle(fontSize: 22),
     );
   }
 

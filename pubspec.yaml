@@ -38,6 +38,7 @@ dependencies:
   get: 
   http:
   carousel_slider: ^4.1.1
+  google_fonts: ^2.3.2
   
 dev_dependencies:
   flutter_test:
