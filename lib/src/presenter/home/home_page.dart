@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    widget.controller.getNowPlayingMovies();
+    widget.controller.getMovies();
     super.initState();
   }
 
@@ -27,9 +27,42 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Movies"),
-        centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.cast_connected_outlined,
+                color: Colors.white,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.search,
+                color: Colors.white,
+              ))
+        ],
       ),
       body: Padding(padding: const EdgeInsets.all(8.0), child: _buildBody()),
+      bottomNavigationBar: BottomNavigationBar(
+          unselectedItemColor: Colors.white,
+          backgroundColor: Colors.black87,
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                ),
+                label: "Home"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.movie_creation_outlined,
+                ),
+                label: "News"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.download,
+                ),
+                label: "Downloads"),
+          ]),
     );
   }
 
@@ -38,7 +71,12 @@ class _HomePageState extends State<HomePage> {
         ? const CircularProgressIndicator()
         : Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [_buildTitle("Playing Now"), _buildCarousel()],
+            children: [
+              _buildTitle("Playing Now"),
+              _buildPlayingNowCarousel(),
+              _buildTitle("Most Popular"),
+              _buildMostPopularCarousel()
+            ],
           ));
   }
 
@@ -50,10 +88,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildCarousel() {
+  Widget _buildPlayingNowCarousel() {
     return MoviesCarousel(
-      itemCount: widget.controller.movies.length,
-      movies: widget.controller.movies,
+      itemCount: widget.controller.playingNowMovies.length,
+      movies: widget.controller.playingNowMovies,
+    );
+  }
+
+  Widget _buildMostPopularCarousel() {
+    return MoviesCarousel(
+      itemCount: widget.controller.playingNowMovies.length,
+      movies: widget.controller.mostPopularMovies,
     );
   }
 }

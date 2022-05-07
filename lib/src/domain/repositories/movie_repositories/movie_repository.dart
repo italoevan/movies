@@ -1,7 +1,6 @@
-import 'package:movies/src/infra/models/now_playing_movie_model.dart';
+import 'package:movies/src/infra/models/movie_model.dart';
 
 abstract class MovieRepository {
-  Future<List<NowPlayingMovieModel>> getNowPlayingUsecase();
+  Future<List<MovieModel>> getNowPlaying();
+  Future<List<MovieModel>> getMostPopularMovies();
 }
-
-

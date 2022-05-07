@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:movies/src/core/consts/endpoints/app_endpoints.dart';
+import 'package:movies/src/core/routes/app_routes.dart';
 
 import '../../../domain/entities/movie.dart';
 
@@ -15,7 +17,7 @@ class MovieElement extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print(model.id);
+        Modular.to.pushNamed(AppRoutes.details, arguments: model);
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),

@@ -1,8 +1,8 @@
 import 'package:movies/src/domain/repositories/movie_repositories/movie_repository.dart';
-import 'package:movies/src/infra/models/now_playing_movie_model.dart';
+import 'package:movies/src/infra/models/movie_model.dart';
 
 abstract class GetNowPlayingUsecase {
-  Future<List<NowPlayingMovieModel>> getMovieNowPlayingUsecase();
+  Future<List<MovieModel>> getMovieNowPlayingUsecase();
 }
 
 class GetNowPlayingUsecaseImpl implements GetNowPlayingUsecase {
@@ -11,9 +11,8 @@ class GetNowPlayingUsecaseImpl implements GetNowPlayingUsecase {
   GetNowPlayingUsecaseImpl(this.movieRepository);
 
   @override
-  Future<List<NowPlayingMovieModel>> getMovieNowPlayingUsecase() async {
-
-    var response = await movieRepository.getNowPlayingUsecase();
+  Future<List<MovieModel>> getMovieNowPlayingUsecase() async {
+    var response = await movieRepository.getNowPlaying();
 
     return response;
   }
