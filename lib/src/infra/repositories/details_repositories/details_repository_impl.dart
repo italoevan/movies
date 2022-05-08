@@ -1,9 +1,7 @@
 import 'dart:convert';
 
-import 'package:movies/src/domain/entities/details_entities/genres_entity.dart';
 import 'package:movies/src/domain/repositories/details_repositories/details_repository.dart';
 import 'package:movies/src/infra/datasources/details_datasources/get_details_datasource.dart';
-import 'package:movies/src/infra/models/movie_model.dart';
 
 import '../../models/details_models/details_model.dart';
 

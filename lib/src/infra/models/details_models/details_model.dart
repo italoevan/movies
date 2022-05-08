@@ -21,7 +21,7 @@ class DetailsModel extends MovieDetailsEntity {
         image: map["backdrop_path"],
         voteAverage: map["vote_average"],
         id: map["id"],
-        genres: map["genres"].map((v) => GenresModel.fromMap(v)).toList(),
+        genres: map["genres"].map<GenresEntity>((v) => GenresModel.fromMap(v)).toList(),
         overview: map["overview"]);
   }
 }

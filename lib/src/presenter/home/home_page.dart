@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:movies/src/core/theme/app_colors.dart';
 import 'package:movies/src/presenter/home/components/movies_carousel.dart';
 import 'package:movies/src/presenter/home/home_controller.dart';
 import 'package:movies/src/presenter/home/state/home_state.dart';
@@ -25,47 +26,27 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Movies"),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.cast_connected_outlined,
-                color: Colors.white,
-              )),
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.search,
-                color: Colors.white,
-              ))
-        ],
-      ),
-      body: Padding(
-          padding: const EdgeInsets.only(top: 24, left: 8, right: 8),
-          child: _buildBody()),
-      bottomNavigationBar: BottomNavigationBar(
-          unselectedItemColor: Colors.white,
-          backgroundColor: Colors.black87,
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                ),
-                label: "Home"),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.movie_creation_outlined,
-                ),
-                label: "News"),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.download,
-                ),
-                label: "Downloads"),
-          ]),
-    );
+        appBar: AppBar(
+          title: const Text("Movies"),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.cast_connected_outlined,
+                  color: Colors.white,
+                )),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ))
+          ],
+        ),
+        body: Padding(
+            padding: const EdgeInsets.only(top: 24, left: 8, right: 8),
+            child: _buildBody()),
+        bottomNavigationBar: _buildBottomNavigation());
   }
 
   Widget _buildBody() {
@@ -105,5 +86,29 @@ class _HomePageState extends State<HomePage> {
       itemCount: widget.controller.playingNowMovies.length,
       movies: widget.controller.mostPopularMovies,
     );
+  }
+
+  Widget _buildBottomNavigation() {
+    return BottomNavigationBar(
+        selectedItemColor: AppColors.mainColor,
+        unselectedItemColor: Colors.white,
+        backgroundColor: Colors.black87,
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
+              label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.movie_creation_outlined,
+              ),
+              label: "News"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.download,
+              ),
+              label: "Downloads"),
+        ]);
   }
 }
