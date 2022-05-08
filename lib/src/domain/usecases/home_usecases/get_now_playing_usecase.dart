@@ -1,5 +1,6 @@
-import 'package:movies/src/domain/repositories/movie_repositories/movie_repository.dart';
 import 'package:movies/src/infra/models/movie_model.dart';
+
+import '../../repositories/home_repositories/movie_repository.dart';
 
 abstract class GetNowPlayingUsecase {
   Future<List<MovieModel>> getMovieNowPlayingUsecase();

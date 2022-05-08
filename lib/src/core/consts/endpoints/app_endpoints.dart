@@ -10,6 +10,6 @@ abstract class AppEndpoints {
   static String imageEndpoint(String imageUrl) =>
       "https://image.tmdb.org/t/p/w500/$imageUrl";
 
-  static String detailsEndpoint =
-      "https://api.themoviedb.org/3/movie/508943?api_key=$apiKey&language=EN";
+  static String detailsEndpoint (String movieId)=>
+      "https://api.themoviedb.org/3/movie/$movieId?api_key=$apiKey&language=EN";
 }

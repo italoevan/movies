@@ -1,9 +1,10 @@
 import 'dart:convert';
 
-import 'package:movies/src/domain/repositories/movie_repositories/movie_repository.dart';
-import 'package:movies/src/infra/datasources/get_most_popular_movies_datasource.dart';
-import 'package:movies/src/infra/datasources/get_now_playing_datasource.dart';
 import 'package:movies/src/infra/models/movie_model.dart';
+
+import '../../../domain/repositories/home_repositories/movie_repository.dart';
+import '../../datasources/home_datasources/get_most_popular_movies_datasource.dart';
+import '../../datasources/home_datasources/get_now_playing_datasource.dart';
 
 class MovieRepositoryImpl implements MovieRepository {
   final GetNowPlayingDatasource datasource;

@@ -1,6 +1,7 @@
 import 'package:movies/src/domain/entities/movie.dart';
-import 'package:movies/src/domain/repositories/movie_repositories/movie_repository.dart';
 import 'package:movies/src/infra/models/movie_model.dart';
+
+import '../../repositories/home_repositories/movie_repository.dart';
 
 abstract class GetMostPopularMoviesUsecase {
   Future<List<MovieModel>> getMostPopularMovies();

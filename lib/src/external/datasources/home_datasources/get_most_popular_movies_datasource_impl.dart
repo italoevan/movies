@@ -1,7 +1,8 @@
 import 'package:movies/src/core/consts/endpoints/app_endpoints.dart';
 import 'package:movies/src/core/utils/requester.dart';
 
-import '../../../infra/datasources/get_most_popular_movies_datasource.dart';
+import '../../../infra/datasources/home_datasources/get_most_popular_movies_datasource.dart';
+
 
 class GetMostPopularMoviesDatasourceImpl
     implements GetMostPopularMoviesDatasource {

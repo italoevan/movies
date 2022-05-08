@@ -1,7 +1,8 @@
 import 'package:movies/src/core/consts/endpoints/app_endpoints.dart';
 import 'package:movies/src/core/utils/requester.dart';
 
-import '../../../infra/datasources/get_now_playing_datasource.dart';
+import '../../../infra/datasources/home_datasources/get_now_playing_datasource.dart';
+
 
 class GetNowPlayingDatasourceImpl implements GetNowPlayingDatasource {
   final Requester requester;
