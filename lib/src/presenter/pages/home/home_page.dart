@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movies/src/core/theme/app_colors.dart';
+import 'package:movies/src/presenter/pages/home/components/home_shimmer.dart';
 import 'package:movies/src/presenter/pages/home/state/home_state.dart';
 
-import 'components/movies_carousel.dart';
 import './home_controller.dart';
+import 'components/movies_carousel.dart';
+
 class HomePage extends StatefulWidget {
   final HomeController controller;
 
@@ -51,7 +53,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildBody() {
     return Obx(() => widget.controller.currentState is HomeLoadingState
-        ? const CircularProgressIndicator()
+        ? const HomeShimmer()
         : Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
