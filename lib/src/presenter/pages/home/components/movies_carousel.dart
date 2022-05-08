@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:movies/src/domain/entities/movie_entity.dart';
-import 'package:movies/src/presenter/home/components/movie_element.dart';
+import 'package:movies/src/presenter/pages/home/components/movie_element.dart';
 
 class MoviesCarousel extends StatelessWidget {
   final int itemCount;

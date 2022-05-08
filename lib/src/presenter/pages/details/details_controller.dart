@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:movies/src/domain/entities/movie_entity.dart';
 import 'package:movies/src/domain/usecases/details_usecases/get_details_usecase.dart';
 import 'package:movies/src/infra/models/details_models/details_model.dart';
-import 'package:movies/src/presenter/details/state/details_state.dart';
+import 'package:movies/src/presenter/pages/details/state/details_state.dart';
 
 abstract class DetailsController {
   DetailsState get currentState;
@@ -28,8 +28,6 @@ class DetailsControllerImpl implements DetailsController {
         .getDetails((Modular.args.data as MovieEntity).id.toString());
     _detailsModel = response;
     setCurrentState(DetailsLoadedState());
-
-    print(response);
   }
 
   @override

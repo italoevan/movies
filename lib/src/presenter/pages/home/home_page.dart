@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movies/src/core/theme/app_colors.dart';
-import 'package:movies/src/presenter/home/components/movies_carousel.dart';
-import 'package:movies/src/presenter/home/home_controller.dart';
-import 'package:movies/src/presenter/home/state/home_state.dart';
+import 'package:movies/src/presenter/pages/home/state/home_state.dart';
 
+import 'components/movies_carousel.dart';
+import './home_controller.dart';
 class HomePage extends StatefulWidget {
   final HomeController controller;
 

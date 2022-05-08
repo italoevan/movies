@@ -3,7 +3,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:movies/src/core/consts/endpoints/app_endpoints.dart';
 import 'package:movies/src/core/routes/app_routes.dart';
 
-import '../../../domain/entities/movie_entity.dart';
+import '../../../../domain/entities/movie_entity.dart';
+
 
 class MovieElement extends StatelessWidget {
   final MovieEntity model;

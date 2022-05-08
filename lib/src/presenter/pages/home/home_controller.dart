@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 import 'package:movies/src/domain/entities/movie_entity.dart';
 import 'package:movies/src/domain/usecases/home_usecases/get_most_popular_movies_usecase.dart';
-import 'package:movies/src/presenter/home/state/home_state.dart';
+import 'package:movies/src/presenter/pages/home/state/home_state.dart';
 
-import '../../domain/usecases/home_usecases/get_now_playing_usecase.dart';
-import '../../infra/models/movie_model.dart';
+import '../../../domain/usecases/home_usecases/get_now_playing_usecase.dart';
+
 
 abstract class HomeController {
   HomeState get currentState;

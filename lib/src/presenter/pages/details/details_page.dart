@@ -3,10 +3,11 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:movies/src/core/consts/endpoints/app_endpoints.dart';
 import 'package:movies/src/domain/entities/movie_entity.dart';
-import 'package:movies/src/presenter/details/components/genre_component.dart';
-import 'package:movies/src/presenter/details/components/user_avaliation_component.dart';
-import 'package:movies/src/presenter/details/details_controller.dart';
-import 'package:movies/src/presenter/details/state/details_state.dart';
+import 'package:movies/src/presenter/pages/details/details_controller.dart';
+import 'package:movies/src/presenter/pages/details/state/details_state.dart';
+
+import 'components/genre_component.dart';
+import 'components/user_avaliation_component.dart';
 
 class DetailsPage extends StatefulWidget {
   final DetailsController controller;
@@ -27,11 +28,12 @@ class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        extendBody: true,
         body: SingleChildScrollView(
-      child: Obx(() => widget.controller.currentState is DetailsLoadingState
-          ? const Expanded(child: Center(child: CircularProgressIndicator()))
-          : _buildLoadedContent()),
-    ));
+          child: Obx(() => widget.controller.currentState is DetailsLoadingState
+              ? const Center(child: CircularProgressIndicator())
+              : _buildLoadedContent()),
+        ));
   }
 
   Widget _buildLoadedContent() {

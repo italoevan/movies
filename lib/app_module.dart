@@ -6,14 +6,14 @@ import 'package:movies/src/external/datasources/details_datasources/get_details_
 import 'package:movies/src/external/datasources/home_datasources/get_most_popular_movies_datasource_impl.dart';
 import 'package:movies/src/infra/repositories/details_repositories/details_repository_impl.dart';
 import 'package:movies/src/infra/repositories/movie_repositories/movie_repository_impl.dart';
-import 'package:movies/src/presenter/details/details_controller.dart';
-import 'package:movies/src/presenter/details/details_page.dart';
-import 'package:movies/src/presenter/home/home_controller.dart';
-import 'package:movies/src/presenter/home/home_page.dart';
+import 'package:movies/src/presenter/pages/details/details_controller.dart';
+import 'package:movies/src/presenter/pages/home/home_controller.dart';
+import 'package:movies/src/presenter/pages/home/home_page.dart';
 
 import 'src/domain/usecases/home_usecases/get_most_popular_movies_usecase.dart';
 import 'src/domain/usecases/home_usecases/get_now_playing_usecase.dart';
 import 'src/external/datasources/home_datasources/get_now_playing_datasource_impl.dart';
+import 'src/presenter/pages/details/details_page.dart';
 
 class AppModule extends Module {
   @override
