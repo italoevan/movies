@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:movies/src/domain/entities/movie.dart';
+import 'package:movies/src/domain/entities/movie_entity.dart';
 import 'package:movies/src/presenter/details/details_controller.dart';
 
 class DetailsPage extends StatefulWidget {

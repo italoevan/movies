@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:movies/src/domain/entities/movie.dart';
+import 'package:movies/src/domain/entities/movie_entity.dart';
 import 'package:movies/src/domain/usecases/details_usecases/get_details_usecase.dart';
 
 abstract class DetailsController {
@@ -15,6 +15,6 @@ class DetailsControllerImpl implements DetailsController {
   Future getDetails() async {
     var response = await getDetailsUsecase
         .getDetails((Modular.args.data as MovieEntity).id.toString());
-    print(response.body);
+    print(response);
   }
 }

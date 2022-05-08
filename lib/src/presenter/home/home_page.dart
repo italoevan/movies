@@ -42,7 +42,9 @@ class _HomePageState extends State<HomePage> {
               ))
         ],
       ),
-      body: Padding(padding: const EdgeInsets.all(8.0), child: _buildBody()),
+      body: Padding(
+          padding: const EdgeInsets.only(top: 24, left: 8, right: 8),
+          child: _buildBody()),
       bottomNavigationBar: BottomNavigationBar(
           unselectedItemColor: Colors.white,
           backgroundColor: Colors.black87,
@@ -74,6 +76,9 @@ class _HomePageState extends State<HomePage> {
             children: [
               _buildTitle("Playing Now"),
               _buildPlayingNowCarousel(),
+              const SizedBox(
+                height: 16,
+              ),
               _buildTitle("Most Popular"),
               _buildMostPopularCarousel()
             ],

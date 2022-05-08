@@ -1,4 +1,4 @@
-import 'package:movies/src/domain/entities/movie.dart';
+import 'package:movies/src/domain/entities/movie_entity.dart';
 
 class MovieModel extends MovieEntity {
   MovieModel(String image, int id, String title) : super(image, id, title);

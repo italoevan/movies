@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:movies/src/domain/entities/movie_entity.dart';
 import 'package:movies/src/domain/usecases/home_usecases/get_most_popular_movies_usecase.dart';
 import 'package:movies/src/presenter/home/state/home_state.dart';
 
@@ -8,16 +9,16 @@ import '../../infra/models/movie_model.dart';
 abstract class HomeController {
   HomeState get currentState;
   Future getMovies();
-  List<MovieModel> get playingNowMovies;
-  List<MovieModel> get mostPopularMovies;
+  List<MovieEntity> get playingNowMovies;
+  List<MovieEntity> get mostPopularMovies;
 }
 
 class HomeControllerImpl extends HomeController {
   @override
-  List<MovieModel> playingNowMovies = [];
+  List<MovieEntity> playingNowMovies = [];
 
   @override
-  List<MovieModel> mostPopularMovies = [];
+  List<MovieEntity> mostPopularMovies = [];
 
   // ignore: prefer_final_fields
   Rx<HomeState> _currentState = Rx(HomeLoadingState());

@@ -1,10 +1,9 @@
-import 'package:movies/src/domain/entities/movie.dart';
-import 'package:movies/src/infra/models/movie_model.dart';
+import 'package:movies/src/domain/entities/movie_entity.dart';
 
 import '../../repositories/home_repositories/movie_repository.dart';
 
 abstract class GetMostPopularMoviesUsecase {
-  Future<List<MovieModel>> getMostPopularMovies();
+  Future<List<MovieEntity>> getMostPopularMovies();
 }
 
 class GetMostPopularMoviesUsecaseImpl implements GetMostPopularMoviesUsecase {
@@ -13,7 +12,7 @@ class GetMostPopularMoviesUsecaseImpl implements GetMostPopularMoviesUsecase {
   GetMostPopularMoviesUsecaseImpl(this.repository);
 
   @override
-  Future<List<MovieModel>> getMostPopularMovies() async {
+  Future<List<MovieEntity>> getMostPopularMovies() async {
     var response = await repository.getMostPopularMovies();
     return response;
   }

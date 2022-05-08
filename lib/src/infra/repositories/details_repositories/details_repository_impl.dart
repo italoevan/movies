@@ -1,5 +1,11 @@
+import 'dart:convert';
+
+import 'package:movies/src/domain/entities/details_entities/genres_entity.dart';
 import 'package:movies/src/domain/repositories/details_repositories/details_repository.dart';
 import 'package:movies/src/infra/datasources/details_datasources/get_details_datasource.dart';
+import 'package:movies/src/infra/models/movie_model.dart';
+
+import '../../models/details_models/details_model.dart';
 
 class DetailsRepositoryImpl implements DetailsRepository {
   final GetDetailsDatasource datasource;
@@ -7,8 +13,13 @@ class DetailsRepositoryImpl implements DetailsRepository {
   DetailsRepositoryImpl(this.datasource);
 
   @override
-  Future getDetails(String movieId) async {
+  Future<DetailsModel> getDetails(String movieId) async {
     var response = await datasource.getDetails(movieId);
-    return response;
+
+    var jsonResponse = jsonDecode(response.body);
+
+    var model = DetailsModel.fromMap(jsonResponse);
+
+    return model;
   }
 }
