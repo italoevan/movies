@@ -5,10 +5,12 @@ import 'package:movies/src/domain/usecases/details_usecases/get_details_usecase.
 import 'package:movies/src/infra/models/details_models/details_model.dart';
 import 'package:movies/src/presenter/pages/details/state/details_state.dart';
 
+import '../../../domain/entities/details_entities/movie_details_entity.dart';
+
 abstract class DetailsController {
   DetailsState get currentState;
   Future getDetails();
-  DetailsModel get model;
+  MovieDetailsEntity get model;
 }
 
 class DetailsControllerImpl implements DetailsController {
@@ -19,7 +21,7 @@ class DetailsControllerImpl implements DetailsController {
   // ignore: prefer_final_fields
   Rx<DetailsState> _currentState = Rx(DetailsLoadedState());
 
-  late DetailsModel _detailsModel;
+  late MovieDetailsEntity _detailsModel;
 
   @override
   Future getDetails() async {
@@ -36,5 +38,5 @@ class DetailsControllerImpl implements DetailsController {
   void setCurrentState(DetailsState state) => _currentState.value = state;
 
   @override
-  DetailsModel get model => _detailsModel;
+  MovieDetailsEntity get model => _detailsModel;
 }

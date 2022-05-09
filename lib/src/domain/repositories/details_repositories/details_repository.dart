@@ -1,6 +1,7 @@
 
-import '../../../infra/models/details_models/details_model.dart';
+
+import '../../entities/details_entities/movie_details_entity.dart';
 
 abstract class DetailsRepository {
-  Future<DetailsModel> getDetails(String movieId);
+  Future<MovieDetailsEntity> getDetails(String movieId);
 }

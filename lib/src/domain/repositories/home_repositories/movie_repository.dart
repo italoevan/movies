@@ -1,6 +1,7 @@
-import 'package:movies/src/infra/models/movie_model.dart';
+
+import '../../entities/movie_entity.dart';
 
 abstract class MovieRepository {
-  Future<List<MovieModel>> getNowPlaying();
-  Future<List<MovieModel>> getMostPopularMovies();
+  Future<List<MovieEntity>> getNowPlaying();
+  Future<List<MovieEntity>> getMostPopularMovies();
 }
