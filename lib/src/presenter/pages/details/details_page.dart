@@ -6,6 +6,7 @@ import 'package:movies/src/domain/entities/movie_entity.dart';
 import 'package:movies/src/presenter/pages/details/details_controller.dart';
 import 'package:movies/src/presenter/pages/details/state/details_state.dart';
 
+import 'components/details_shimmer.dart';
 import 'components/genre_component.dart';
 import 'components/user_avaliation_component.dart';
 
@@ -31,7 +32,7 @@ class _DetailsPageState extends State<DetailsPage> {
         extendBody: true,
         body: SingleChildScrollView(
           child: Obx(() => widget.controller.currentState is DetailsLoadingState
-              ? const Center(child: CircularProgressIndicator())
+              ? const DetailsShimmer()
               : _buildLoadedContent()),
         ));
   }
